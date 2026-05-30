@@ -1,0 +1,123 @@
+# I — INSTRUCTION
+I already have an existing backend project.
+Now I want to add a new feature into the same project.
+Please help me design the complete backend architecture in Markdown format.
+I want the response to be simple and practical.
+Do not assume I already know the internal architecture.
+Please decide the required:
+- backend flow
+- APIs
+- folders
+- services
+- database structure
+- processing flow
+- validations
+- logging
+based on my requirement.
+Do not generate frontend.
+Do not generate implementation code.
+Generate only architecture and implementation planning.
+Explain everything step-by-step in a clean structure.
+The response should be easy to understand and easy to implement phase-by-phase.
+---
+# C — CONTEXT
+I already have a working Resume Search/Retrieval system.
+Now I want to enhance the same backend by adding a Resume Ingestion flow batch by batch for the files under "Resumes" folder.
+The new feature should allow uploading resume PDFs or docs file formats in batch of processing 5 resumes at a time and storing searchable resume data into MongoDB.
+The system should:
+- take resume PDF/docs files
+- read the content from the PDF/docs
+- process the resume data
+- convert the resume into structured JSON
+- generate embeddings
+- store everything into MongoDB
+- make the data searchable later using vector search
+I am using:
+- Node.js
+- Express
+- TypeScript
+- MongoDB Atlas
+- Mistral Embedding API
+The embedding model should use:
+- mistral-embed
+- 1024 dimensions
+I do not want chunking.
+One resume should become:
+- one JSON document
+- one embedding vector
+The parsing should mainly work using:
+- regex
+- keyword matching
+- text scanning
+Optional LLM support can be added later using environment variables.
+---
+# E — EXAMPLE
+The overall system should work something like this:
+Resume PDF
+↓
+Read Resume Content
+↓
+Clean Text
+↓
+Extract Resume Information
+↓
+Generate Embedding
+↓
+Store in Database
+The final stored data may contain fields like:
+- name
+- email
+- phone
+- skills
+- experience
+- education
+- company
+- embedding
+The architecture should explain:
+- how the full flow works
+- how the files are organized
+- how the request moves internally
+- how data gets stored
+- how embedding generation happens
+---
+# P — PERSONA
+Act like an experienced backend architect helping someone design this feature properly inside an existing project.
+Keep the explanation:
+- practical
+- realistic
+- implementation-oriented
+- cleanly organized
+Do not overcomplicate the explanation.
+---
+# O — OUTPUT FORMAT
+Generate the response in Markdown format.
+The response should contain:
+1. Feature Overview
+2. Recommended Backend Flow
+3. Suggested Folder Structure
+4. File Responsibilities
+5. Processing Flow
+6. Database Structure
+7. Embedding Flow
+8. Validation Strategy
+9. Error Handling
+10. Logging Strategy
+11. Phase-wise Implementation Plan
+12. Final End-to-End Flow
+Use:
+- headings
+- flow diagrams
+- tables where needed
+- simple explanations
+Do not generate implementation code.
+---
+# T — TASK
+Design a complete backend architecture for adding a Resume Ingestion feature of PDF/docs file formats in batch of processing 5 resumes at a time into an existing Resume Search system.
+The architecture should clearly explain:
+- what needs to be built
+- how the flow should work
+- how resume processing should happen
+- how embeddings should be generated
+- how MongoDB storage should work
+- how the full pipeline should be implemented phase-by-phase
+Generate the final architecture document now.
